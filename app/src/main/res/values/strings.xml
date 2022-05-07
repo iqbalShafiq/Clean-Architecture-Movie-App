@@ -10,4 +10,10 @@
     <string name="release_date">Release Date</string>
     <string name="bookmark_icon">bookmark icon</string>
     <string name="there_s_an_error_when_fetching_the_api">There\'s an error when fetching the API</string>
+    <string name="movie_landscape_poster">movie landscape poster</string>
+    <string name="back_icon">back icon</string>
+    <string name="about_movie">About Movie</string>
+    <string name="overviews">Overviews</string>
+    <string name="popularity">Popularity</string>
+    <string name="your_favorite_movies">Your Favorite Movies</string>
 </resources>
