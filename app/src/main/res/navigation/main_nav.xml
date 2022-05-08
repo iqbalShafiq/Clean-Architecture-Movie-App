@@ -31,11 +31,11 @@
         tools:layout="@layout/fragment_detail">
         <argument
             android:name="movie"
-            app:argType="space.iqbalsyafiq.movieapp.core.domain.model.Movie" />
+            app:argType="space.iqbalsyafiq.core.domain.model.Movie" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="space.iqbalsyafiq.movieapp.favorite.FavoriteFragment"
+        android:name="space.iqbalsyafiq.favorite.FavoriteFragment"
         android:label="FavoriteFragment">
         <action
             android:id="@+id/navigateToDetailFragmentFromFavorite"

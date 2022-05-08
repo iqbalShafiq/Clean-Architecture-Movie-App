@@ -5,9 +5,9 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
-import space.iqbalsyafiq.movieapp.core.di.databaseModule
-import space.iqbalsyafiq.movieapp.core.di.networkModule
-import space.iqbalsyafiq.movieapp.core.di.repositoryModule
+import space.iqbalsyafiq.core.di.databaseModule
+import space.iqbalsyafiq.core.di.networkModule
+import space.iqbalsyafiq.core.di.repositoryModule
 import space.iqbalsyafiq.movieapp.di.useCaseModule
 import space.iqbalsyafiq.movieapp.di.viewModelModule
 

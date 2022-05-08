@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clMovie"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="12dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivMoviePoster"
+        android:layout_width="95dp"
+        android:layout_height="120dp"
+        android:contentDescription="@string/movie_poster"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/ivMoviePoster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivMoviePoster"
+        app:layout_constraintTop_toTopOf="@id/ivMoviePoster">
+
+        <TextView
+            style="@style/Medium12Sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title" />
+
+        <TextView
+            android:id="@+id/tvMovieTitle"
+            style="@style/Regular12Sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="Dr. Strange: Movie of Madness" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="4dp"
+            android:background="@drawable/bg_radius_8dp"
+            android:backgroundTint="?colorSecondary" />
+
+        <TextView
+            style="@style/Medium12Sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/release_date" />
+
+        <TextView
+            android:id="@+id/tvReleaseDate"
+            style="@style/Regular12Sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="2022-08-03" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/Medium12Sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/read_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ivMoviePoster" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

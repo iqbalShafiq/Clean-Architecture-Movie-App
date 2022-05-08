@@ -13,7 +13,7 @@
         android:paddingHorizontal="30dp"
         android:clipToPadding="false"
         android:paddingTop="42dp"
-        tools:context=".favorite.FavoriteFragment">
+        tools:context="space.iqbalsyafiq.favorite.FavoriteFragment">
 
         <TextView
             android:id="@+id/tvAppName"
