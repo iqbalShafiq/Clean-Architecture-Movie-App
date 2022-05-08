@@ -1,7 +1,7 @@
 package space.iqbalsyafiq.movieapp.core.domain.repository
 
 import kotlinx.coroutines.flow.Flow
-import space.iqbalsyafiq.movieapp.core.data.source.Resource
+import space.iqbalsyafiq.movieapp.core.data.Resource
 import space.iqbalsyafiq.movieapp.core.domain.model.Movie
 
 interface IMovieRepository {

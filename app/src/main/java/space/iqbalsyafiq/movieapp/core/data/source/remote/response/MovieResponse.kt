@@ -3,7 +3,8 @@ package space.iqbalsyafiq.movieapp.core.data.source.remote.response
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse(
-    val backdrop_path: String?,
+    @SerializedName("backdrop_path")
+    val backdropPath: String?,
     val id: Int?,
     @SerializedName("original_title")
     val originalTitle: String?,
