@@ -17,6 +17,13 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     private var listData = ArrayList<Movie>()
     var onItemClick: ((Movie) -> Unit)? = null
 
+    fun setData(newListData: List<Movie>?) {
+        if (newListData == null) return
+        listData.clear()
+        listData.addAll(newListData)
+        listData.forEachIndexed { index, _ -> notifyItemChanged(index) }
+    }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemMovieBinding.bind(itemView)
 
@@ -28,7 +35,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
             with(binding) {
                 Glide.with(itemView.context)
                     .asBitmap()
-                    .load(BASE_URL + data.posterPath)
+                    .load(IMAGE_BASE_URL + data.posterPath)
                     .transform(FitCenter(), RoundedCorners(16))
                     .into(ivMoviePoster)
 
@@ -51,6 +58,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     override fun getItemCount(): Int = listData.size
 
     companion object {
-        private val BASE_URL = "https://api.themoviedb.org"
+        private const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
     }
 }

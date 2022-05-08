@@ -43,7 +43,7 @@
         android:id="@+id/ivMoviePoster"
         android:layout_width="95dp"
         android:layout_height="120dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="150dp"
         android:contentDescription="@string/movie_poster"
         app:layout_constraintBottom_toBottomOf="@id/tvMovieTitle"
@@ -134,15 +134,17 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ivFavoriteMovie"
         android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="52dp"
         android:background="@drawable/bg_radius_8dp"
-        android:backgroundTint="@color/dark_accent"
+        android:backgroundTint="?colorOnPrimary"
         android:contentDescription="@string/bookmark_icon"
         android:foregroundGravity="center"
         android:src="@drawable/ic_bookmarked"
+        app:tint="?colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -16,4 +16,6 @@
     <string name="overviews">Overviews</string>
     <string name="popularity">Popularity</string>
     <string name="your_favorite_movies">Your Favorite Movies</string>
+    <string name="read_more">Read More</string>
+    <string name="your_favorite_list_is_empty">Your favorite list is empty</string>
 </resources>

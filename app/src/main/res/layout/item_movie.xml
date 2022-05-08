@@ -19,10 +19,10 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@id/ivMoviePoster"
-        app:layout_constraintEnd_toStartOf="@id/ivBookmarkMovie"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivMoviePoster"
         app:layout_constraintTop_toTopOf="@id/ivMoviePoster">
 
@@ -34,23 +34,29 @@
 
         <TextView
             android:id="@+id/tvMovieTitle"
-            style="@style/Medium12Sp"
+            style="@style/Regular12Sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
             tools:text="Dr. Strange: Movie of Madness" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="4dp"
+            android:background="@drawable/bg_radius_8dp"
+            android:backgroundTint="?colorSecondary" />
+
         <TextView
             style="@style/Medium12Sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:text="@string/release_date" />
 
         <TextView
             android:id="@+id/tvReleaseDate"
-            style="@style/Medium12Sp"
+            style="@style/Regular12Sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -58,13 +64,14 @@
             tools:text="2022-08-03" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/ivBookmarkMovie"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:contentDescription="@string/bookmark_icon"
-        android:src="@drawable/ic_bookmark"
+    <TextView
+        style="@style/Medium12Sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/read_more"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/ivMoviePoster" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
