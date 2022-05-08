@@ -36,20 +36,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvAppName" />
 
-        <EditText
-            android:id="@+id/etSearch"
-            style="@style/Regular14Sp"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_radius_8dp"
-            android:backgroundTint="?colorSecondary"
-            android:hint="@string/search_here"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:paddingHorizontal="20dp"
-            app:layout_constraintTop_toBottomOf="@id/tvList" />
-
         <TextView
             android:id="@+id/tvErrorApi"
             style="@style/Medium14Sp"
@@ -61,7 +47,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etSearch" />
+            app:layout_constraintTop_toBottomOf="@id/tvList" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvListMovie"
@@ -77,7 +63,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etSearch"
+            app:layout_constraintTop_toBottomOf="@id/tvList"
             app:layout_constraintVertical_bias="0.0"
             tools:listitem="@layout/item_movie" />
 

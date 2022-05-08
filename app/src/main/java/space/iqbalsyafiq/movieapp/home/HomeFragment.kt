@@ -52,8 +52,9 @@ class HomeFragment : Fragment() {
         viewModel.movie.observe(viewLifecycleOwner) {
             it?.let { movie ->
                 when (movie) {
-                    is space.iqbalsyafiq.core.data.Resource.Loading -> binding.refreshLayout.isRefreshing =
-                        true
+                    is space.iqbalsyafiq.core.data.Resource.Loading -> {
+                        binding.refreshLayout.isRefreshing = true
+                    }
                     is space.iqbalsyafiq.core.data.Resource.Success -> {
                         binding.refreshLayout.isRefreshing = false
                         adapter.setData(movie.data)

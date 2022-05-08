@@ -15,9 +15,8 @@ class MovieRepository(
     private val localDataSource: space.iqbalsyafiq.core.data.source.local.LocalDataSource,
     private val appExecutors: AppExecutors
 ) : IMovieRepository {
-    override fun getAllMovie(): Flow<space.iqbalsyafiq.core.data.Resource<List<Movie>>> =
-        object :
-            space.iqbalsyafiq.core.data.NetworkBoundResource<List<Movie>, List<MovieResponse>>() {
+    override fun getAllMovie(): Flow<Resource<List<Movie>>> =
+        object : NetworkBoundResource<List<Movie>, List<MovieResponse>>() {
             override fun loadFromDB(): Flow<List<Movie>> {
                 return localDataSource.getAllMovie().map {
                     DataMapper.mapEntitiesToDomain(it)
@@ -25,7 +24,6 @@ class MovieRepository(
             }
 
             override fun shouldFetch(data: List<Movie>?): Boolean = data == null || data.isEmpty()
-
 
             override suspend fun createCall(): Flow<ApiResponse<List<MovieResponse>>> =
                 remoteDataSource.getAllMovie()
@@ -47,3 +45,4 @@ class MovieRepository(
         appExecutors.diskIO().execute { localDataSource.setFavoriteMovie(tourismEntity, state) }
     }
 }
+
