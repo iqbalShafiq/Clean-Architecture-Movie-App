@@ -56,8 +56,14 @@ class DetailFragment : Fragment() {
 
             // set favorite state on click
             ivFavoriteMovie.setOnClickListener {
-                viewModel.setFavoriteTourism(movie, !movie.isFavorite)
-                setFavoriteState(!movie.isFavorite)
+                // switch movie's favorite state
+                movie.isFavorite = !movie.isFavorite
+
+                // set new favorite state to database
+                viewModel.setFavoriteTourism(movie, movie.isFavorite)
+
+                // set new favorite state ui
+                setFavoriteState(movie.isFavorite)
             }
 
             // set text content
@@ -69,6 +75,7 @@ class DetailFragment : Fragment() {
     }
 
     private fun setFavoriteState(isFavorite: Boolean) {
+        Log.d(TAG, "setFavoriteState: $isFavorite")
         if (isFavorite) binding.ivFavoriteMovie.setImageResource(R.drawable.ic_bookmarked)
         else binding.ivFavoriteMovie.setImageResource(R.drawable.ic_bookmark)
     }
