@@ -12,7 +12,7 @@ interface MovieDao {
     @Query("SELECT * FROM movies WHERE is_favorite = 1")
     fun getFavoriteMovie(): Flow<List<MovieEntity>>
 
-    @Query("SELECT * FROM movies WHERE is_favorite = 1 AND title LIKE '%' || :query || '%'")
+    @Query("SELECT * FROM movies WHERE is_favorite = 1 AND title LIKE :query")
     fun searchFavoriteMovie(
         query: String
     ): Flow<List<MovieEntity>>

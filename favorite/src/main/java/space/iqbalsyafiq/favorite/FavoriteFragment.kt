@@ -45,11 +45,12 @@ class FavoriteFragment : Fragment() {
         binding.ivBack.setOnClickListener { requireActivity().onBackPressed() }
         binding.etSearch.addTextChangedListener {
             Log.d("Search", "onViewCreated: ${it.toString()}")
-            viewModel.searchFavoriteMovie(it.toString()).observe(viewLifecycleOwner) { searched ->
-                searched?.let { movies ->
-                    setAdapter(movies)
+            viewModel.searchFavoriteMovie("%${it.toString()}%")
+                .observe(viewLifecycleOwner) { searched ->
+                    searched?.let { movies ->
+                        setAdapter(movies)
+                    }
                 }
-            }
         }
 
         observeLiveData()
