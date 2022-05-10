@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_app">Movie App</string>
+    <string name="find_your_movie">Find Your Movie</string>
+    <string name="search_here">Search here …</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="title">Title:</string>
+    <string name="release_date">Release Date</string>
+    <string name="bookmark_icon">bookmark icon</string>
+    <string name="there_s_an_error_when_fetching_the_api">There\'s an error when fetching the API</string>
+    <string name="movie_landscape_poster">movie landscape poster</string>
+    <string name="back_icon">back icon</string>
+    <string name="about_movie">About Movie</string>
+    <string name="overviews">Overviews</string>
+    <string name="popularity">Popularity</string>
+    <string name="your_favorite_movies">Favorite Movies</string>
+    <string name="read_more">Read More</string>
+    <string name="your_favorite_list_is_empty">Your favorite list is empty</string>
+    <string name="title_favorite">Favorite List</string>
+</resources>
