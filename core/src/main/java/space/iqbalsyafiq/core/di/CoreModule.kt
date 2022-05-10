@@ -1,6 +1,8 @@
 package space.iqbalsyafiq.core.di
 
 import androidx.room.Room
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -39,8 +41,12 @@ val databaseModule = module {
         get<MovieDatabase>().movieDao()
     }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("dicoding".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(androidContext(), MovieDatabase::class.java, "Movie.db")
-            .fallbackToDestructiveMigration().build()
+            .fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 

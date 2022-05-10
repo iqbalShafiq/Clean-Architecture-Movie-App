@@ -7,6 +7,7 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/bg_radius_8dp_bottom_only.xml" value="0.121" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/bg_radius_8dp_gradient.xml" value="0.121" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_bookmark.xml" value="0.102" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_bookmarked.xml" value="0.121" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_detail.xml" value="0.152" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_favorite.xml" value="0.176" />
@@ -14,7 +15,7 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/app/src/main/res/layout/item_movie.xml" value="0.264" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/core/src/main/res/drawable/bg_radius_8dp.xml" value="0.121" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/core/src/main/res/layout/item_movie.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/favorite/src/main/res/layout/fragment_favorite.xml" value="0.136" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/MovieApp/favorite/src/main/res/layout/fragment_favorite.xml" value="0.176" />
       </map>
     </option>
   </component>
