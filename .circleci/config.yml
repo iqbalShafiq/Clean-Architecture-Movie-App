@@ -37,6 +37,6 @@ workflows:
         - store_artifacts:  
             path: app/build/outputs/apk/debug/
             destination: artifact-file
-  test:
-    jobs:
-      - vulnachecka/scan
+    test:
+      jobs:
+        - vulnachecka/scan
