@@ -1,19 +1,20 @@
 package space.iqbalsyafiq.core.data
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import space.iqbalsyafiq.core.data.source.remote.RemoteDataSource
 import space.iqbalsyafiq.core.data.source.remote.network.ApiResponse
 import space.iqbalsyafiq.core.data.source.remote.response.MovieResponse
 import space.iqbalsyafiq.core.domain.model.Movie
 import space.iqbalsyafiq.core.domain.repository.IMovieRepository
-import space.iqbalsyafiq.core.utils.AppExecutors
 import space.iqbalsyafiq.core.utils.DataMapper
 
 class MovieRepository(
     private val remoteDataSource: RemoteDataSource,
-    private val localDataSource: space.iqbalsyafiq.core.data.source.local.LocalDataSource,
-    private val appExecutors: AppExecutors
+    private val localDataSource: space.iqbalsyafiq.core.data.source.local.LocalDataSource
 ) : IMovieRepository {
     override fun getAllMovie(): Flow<Resource<List<Movie>>> =
         object : NetworkBoundResource<List<Movie>, List<MovieResponse>>() {
@@ -42,7 +43,11 @@ class MovieRepository(
 
     override fun setFavoriteMovie(tourism: Movie, state: Boolean) {
         val tourismEntity = DataMapper.mapDomainToEntity(tourism)
-        appExecutors.diskIO().execute { localDataSource.setFavoriteMovie(tourismEntity, state) }
+        runBlocking {
+            withContext(Dispatchers.IO) {
+                localDataSource.setFavoriteMovie(tourismEntity, state)
+            }
+        }
     }
 }
 

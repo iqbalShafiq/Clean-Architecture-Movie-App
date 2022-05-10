@@ -16,7 +16,6 @@ import space.iqbalsyafiq.core.data.source.local.room.MovieDatabase
 import space.iqbalsyafiq.core.data.source.remote.RemoteDataSource
 import space.iqbalsyafiq.core.data.source.remote.network.ApiService
 import space.iqbalsyafiq.core.domain.repository.IMovieRepository
-import space.iqbalsyafiq.core.utils.AppExecutors
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
@@ -60,6 +59,5 @@ val databaseModule = module {
 val repositoryModule = module {
     single { LocalDataSource(get()) }
     single { RemoteDataSource(get()) }
-    factory { AppExecutors() }
-    single<IMovieRepository> { MovieRepository(get(), get(), get()) }
+    single<IMovieRepository> { MovieRepository(get(), get()) }
 }
