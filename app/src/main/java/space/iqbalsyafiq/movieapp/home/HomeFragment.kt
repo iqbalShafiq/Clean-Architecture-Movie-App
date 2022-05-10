@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import space.iqbalsyafiq.core.data.Resource
 import space.iqbalsyafiq.core.ui.MovieAdapter
 import space.iqbalsyafiq.movieapp.databinding.FragmentHomeBinding
 
@@ -52,10 +53,10 @@ class HomeFragment : Fragment() {
         viewModel.movie.observe(viewLifecycleOwner) {
             it?.let { movie ->
                 when (movie) {
-                    is space.iqbalsyafiq.core.data.Resource.Loading -> {
+                    is Resource.Loading -> {
                         binding.refreshLayout.isRefreshing = true
                     }
-                    is space.iqbalsyafiq.core.data.Resource.Success -> {
+                    is Resource.Success -> {
                         binding.refreshLayout.isRefreshing = false
                         adapter.setData(movie.data)
 
@@ -65,12 +66,21 @@ class HomeFragment : Fragment() {
                             adapter = this@HomeFragment.adapter
                         }
                     }
-                    is space.iqbalsyafiq.core.data.Resource.Error -> {
+                    is Resource.Error -> {
                         binding.refreshLayout.isRefreshing = false
                         binding.tvErrorApi.visibility = View.VISIBLE
+                    }
+                    else -> {
+                        return@let
                     }
                 }
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding.refreshLayout.isRefreshing = false
+        _binding = null
     }
 }

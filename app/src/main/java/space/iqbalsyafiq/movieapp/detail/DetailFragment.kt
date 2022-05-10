@@ -80,6 +80,11 @@ class DetailFragment : Fragment() {
         else binding.ivFavoriteMovie.setImageResource(R.drawable.ic_bookmark)
     }
 
+    override fun onPause() {
+        super.onPause()
+        _binding = null
+    }
+
     companion object {
         private val TAG = DetailFragment::class.java.simpleName
         private const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"

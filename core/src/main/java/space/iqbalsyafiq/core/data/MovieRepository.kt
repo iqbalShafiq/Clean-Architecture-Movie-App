@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import space.iqbalsyafiq.core.data.source.local.LocalDataSource
 import space.iqbalsyafiq.core.data.source.remote.RemoteDataSource
 import space.iqbalsyafiq.core.data.source.remote.network.ApiResponse
 import space.iqbalsyafiq.core.data.source.remote.response.MovieResponse
@@ -14,7 +15,7 @@ import space.iqbalsyafiq.core.utils.DataMapper
 
 class MovieRepository(
     private val remoteDataSource: RemoteDataSource,
-    private val localDataSource: space.iqbalsyafiq.core.data.source.local.LocalDataSource
+    private val localDataSource: LocalDataSource
 ) : IMovieRepository {
     override fun getAllMovie(): Flow<Resource<List<Movie>>> =
         object : NetworkBoundResource<List<Movie>, List<MovieResponse>>() {
@@ -37,6 +38,12 @@ class MovieRepository(
 
     override fun getFavoriteMovie(): Flow<List<Movie>> {
         return localDataSource.getFavoriteMovie().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
+    }
+
+    override fun searchFavoriteMovie(query: String): Flow<List<Movie>> {
+        return localDataSource.searchFavoriteMovie(query).map {
             DataMapper.mapEntitiesToDomain(it)
         }
     }
