@@ -16,30 +16,6 @@
     </style>
 
     <!-- Text -->
-    <style name="SemiBold36Sp" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/light_primary</item>
-        <item name="android:fontFamily">@font/poppins_semibold</item>
-        <item name="android:textSize">36sp</item>
-    </style>
-
-    <style name="SemiBold18Sp" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/light_primary</item>
-        <item name="android:fontFamily">@font/poppins_semibold</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="Medium18Sp" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/light_primary</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="Medium14Sp" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/light_primary</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
     <style name="Medium12Sp" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/light_primary</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
